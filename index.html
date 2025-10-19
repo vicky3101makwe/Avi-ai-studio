@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avi AI Studio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+    }
+    .btn-primary {
+      background-color: #ff0055;
+      border: none;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🎬 Avi AI Studio</div>
+    <p class="text-center">Edit like a legend. Just type your vibe.</p>
+
+    <form id="editForm">
+      <div class="mb-3">
+        <label for="videoUpload" class="form-label">Upload your video</label>
+        <input class="form-control" type="file" id="videoUpload" accept="video/*" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="promptInput" class="form-label">Your prompt</label>
+        <input type="text" class="form-control" id="promptInput" placeholder="Make this epic for Shorts" required />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Edit My Video</button>
+    </form>
+
+    <div id="status" class="mt-4 text-center"></div>
+  </div>
+
+  <script>
+    document.getElementById("editForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("status").innerText = "Uploading and editing your video...";
+      // This will connect to backend (next step)
+    });
+  </script>
+</body>
+</html>
